@@ -2,6 +2,7 @@
 
 export LANG="C"
 export LC_ALL="C"
+export COOL_ORA_ENABLE_ADAPTIVE_OPT="Y"
 export BINARY_TAG="x86_64-centos7-gcc8-opt"
 export CMTCONFIG="x86_64-centos7-gcc8-opt"
 export ASETUP_SYSBIN=`mktemp -d /tmp/newhouse/.asetup-sysbin-XXXXXX_$$`
@@ -26,33 +27,32 @@ type lsetup >/dev/null 2>/dev/null
 if [ $? -ne 0 ]; then
    source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh --quiet
 fi
-source $ATLAS_LOCAL_ROOT_BASE/packageSetups/localSetup.sh --quiet "cmake 3.17.3"
+source $ATLAS_LOCAL_ROOT_BASE/packageSetups/localSetup.sh --quiet "cmake 3.18.3"
 if [ -z "${AtlasSetup:+x}" ]; then
-    export AtlasSetup="/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/AtlasSetup/V02-00-14/AtlasSetup"
-    export AtlasSetupVersion="AtlasSetup-02-00-14"
+    export AtlasSetup="/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/AtlasSetup/V02-00-22/AtlasSetup"
+    export AtlasSetupVersion="AtlasSetup-02-00-22"
 fi
-export FRONTIER_SERVER="(serverurl=http://frontier-atlas.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas1.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas2.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas3.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://atlasfrontier-ai.cern.ch:8000/atlr)(serverurl=http://atlasfrontier2-ai.cern.ch:8000/atlr)(serverurl=http://atlasfrontier1-ai.cern.ch:8000/atlr)(proxyurl=http://lcg-adm1.sfu.computecanada.ca:3128)(proxyurl=http://lcg-adm2.sfu.computecanada.ca:3128)(proxyurl=http://lcg-adm3.sfu.computecanada.ca:3128)(proxyurl=http://atlasbpfrontier.fnal.gov:3127)(proxyurl=http://atlasbpfrontier.cern.ch:3127)"
+export FRONTIER_SERVER="(serverurl=http://frontier-atlas.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas1.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas2.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://frontier-atlas3.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://lcgft-atlas.gridpp.rl.ac.uk:3128/frontierATLAS)(serverurl=http://lcgvo-frontier03.gridpp.rl.ac.uk:3128/frontierATLAS)(serverurl=http://lcgvo-frontier02.gridpp.rl.ac.uk:3128/frontierATLAS)(serverurl=http://lcgvo-frontier01.gridpp.rl.ac.uk:3128/frontierATLAS)(proxyurl=http://lcg-adm1.sfu.computecanada.ca:3128)(proxyurl=http://lcg-adm2.sfu.computecanada.ca:3128)(proxyurl=http://kraken01.westgrid.ca:3128)(proxyurl=http://atlasbpfrontier.fnal.gov:3127)(proxyurl=http://atlasbpfrontier.cern.ch:3127)"
 export ATLAS_POOLCOND_PATH="/cvmfs/atlas-condb.cern.ch/repo/conditions"
 export ATLAS_DB_AREA="/cvmfs/atlas.cern.ch/repo/sw/database"
 export DBRELEASE_OVERRIDE="current"
-export GAUDI_ROOT="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101/GAUDI/22.0.18/InstallArea/x86_64-centos7-gcc8-opt"
 export SITEROOT="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt"
-export AtlasBaseDir="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101"
+export AtlasBaseDir="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101"
 export LCG_RELEASE_BASE="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/sw/lcg/releases"
-export AtlasBuildStamp="2020-08-22T2101"
+export AtlasBuildStamp="2021-04-26T2101"
 export AtlasReleaseType="nightly"
 export AtlasBuildBranch="master"
 export AtlasProject="Athena"
 export TDAQ_RELEASE_BASE="/cvmfs/atlas.cern.ch/repo/sw/tdaq"
-export ATLAS_RELEASE_BASE="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101"
+export ATLAS_RELEASE_BASE="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101"
 export ATLAS_RELEASEDATA="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/atlas/offline/ReleaseData"
-export AtlasArea="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101/Athena/22.0.18"
+export AtlasArea="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101/Athena/22.0.33"
 export G4PATH="/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/Geant4"
-export AtlasVersion="22.0.18"
-source /cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101/Athena/22.0.18/InstallArea/x86_64-centos7-gcc8-opt/setup.sh
+export AtlasVersion="22.0.33"
+source /cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101/Athena/22.0.33/InstallArea/x86_64-centos7-gcc8-opt/setup.sh
 asetup_status=$?
 if [ ${asetup_status} -ne 0 ]; then
-    \echo "AtlasSetup(ERROR): sourcing release setup script (/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101/Athena/22.0.18/InstallArea/x86_64-centos7-gcc8-opt/setup.sh) failed"
+    \echo "AtlasSetup(ERROR): sourcing release setup script (/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101/Athena/22.0.33/InstallArea/x86_64-centos7-gcc8-opt/setup.sh) failed"
 fi
 export TestArea="/home/newhouse/public/Analysis/LRT/lrtnotebooks"
 alias_sys_exe emacs
@@ -67,9 +67,9 @@ fi
 export PATH="${ASETUP_SYSBIN}:${PATH}"
 
 #Release Summary as follows:
-#Release base=/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2020-08-22T2101
+#Release base=/cvmfs/atlas-nightlies.cern.ch/repo/sw/master_Athena_x86_64-centos7-gcc8-opt/2021-04-26T2101
 #Release project=Athena
-#Release releaseNum=22.0.18
+#Release releaseNum=22.0.33
 #Release asconfig=x86_64-centos7-gcc8-opt
 
 # Execute user-specified epilog
